@@ -14,11 +14,13 @@ $(document).on("keypress click",function(){
 });
 
 $(".btn").on("click",function (){
-    var userChosenColour=$(this).attr("id");
-    userClickedPattern.push(userChosenColour);
-    checkAnswer(userClickedPattern.length-1);
-    playSound(userChosenColour);
-    animatePress(userChosenColour);
+    if(start==true) {
+        var userChosenColour=$(this).attr("id");
+        userClickedPattern.push(userChosenColour);
+        checkAnswer(userClickedPattern.length-1);
+        playSound(userChosenColour);
+        animatePress(userChosenColour);
+    }
 });
 
 function checkAnswer(currentLevel) {
@@ -28,9 +30,8 @@ function checkAnswer(currentLevel) {
             $("body").addClass("game-over");
             setTimeout(function() {
                 $("body").removeClass("game-over");
+                startOver();
             }, 200);
-            startOver();
-
         }
         else{
             if(currentLevel==level-1){
