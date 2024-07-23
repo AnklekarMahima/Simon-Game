@@ -9,7 +9,9 @@ $(document).on("keypress click",function(){
     if(start==false) {
         $("#level-title").text("Level "+level);
         nextsequence();
-        start=true;
+        setTimeout(function() {
+            start=true;
+        }, 200);
     }
 });
 
