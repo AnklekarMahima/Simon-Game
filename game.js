@@ -27,7 +27,7 @@ $(".btn").on("click",function (){
 
 function checkAnswer(currentLevel) {
         if(userClickedPattern[currentLevel]!=gamePattern[currentLevel]){
-            $("#level-title").text("Game Over, Press Any Key to Restart");
+            $("#level-title").text("Game Over, Press Any Key or Tap to Restart");
             playSound("wrong");
             $("body").addClass("game-over");
             setTimeout(function() {
